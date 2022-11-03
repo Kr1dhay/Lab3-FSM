@@ -72,3 +72,5 @@ Implement the following design by combining **_clkctick.sv_** with **_f1_fsm.sv_
 <p align="center"> <img src="images/f1_sequence.jpg" /> </p>
 
 ---
+
+I created a top level module which combined the clktick module with the f1_fsm.  Everything worked as expected.
