@@ -1,6 +1,6 @@
 #include "verilated.h"
 #include "verilated_vcd_c.h"
-#include "VlfsrSeven.h"
+#include "Vf1_fsm.h"
 #include "vbuddy.cpp"
 
 #define MAX_SIM_CYC 10000
@@ -13,7 +13,7 @@ int main(int argc, char **argv, char **env){
     int tick;
 
     Verilated::commandArgs(argc, argv);   // init top verilog instance
-    VlfsrSeven* top = new VlfsrSeven;         // init trace dump
+    Vf1_fsm* top = new Vf1_fsm;         // init trace dump
 
     Verilated::traceEverOn(true);
     VerilatedVcdC* tfp = new VerilatedVcdC;
@@ -42,7 +42,7 @@ int main(int argc, char **argv, char **env){
       top->rst = 0;
       top->en = vbdFlag();
 
-      vbdHex(1, top->data_out & 0xF);
+      vbdBar(top->data_out);
 
       vbdCycle(clockCount);
 

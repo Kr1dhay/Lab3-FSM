@@ -9,7 +9,7 @@ module lfsr (
 
     always_ff @(posedge clk)
         if(rst) 
-            sreg <= 4'b0;
+            sreg <= 4'b1;
         else if(en) 
             begin
                 sreg[3] <= sreg[2];
